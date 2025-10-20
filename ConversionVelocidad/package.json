@@ -1,0 +1,24 @@
+{
+  "name": "conversor-velocidad",
+  "version": "1.0.0",
+  "description": "Librería para convertir unidades de velocidad (mph, kph, mps, fps, knots)",
+  "main": "lib/conversorVelocidad.js",
+  "scripts": {
+    "start": "node index.js",
+    "ejemplos": "node ejemplos.js"
+  },
+  "keywords": [
+    "velocidad",
+    "conversion",
+    "unidades",
+    "mph",
+    "kph",
+    "mps",
+    "fps",
+    "knots",
+    "nudos"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
