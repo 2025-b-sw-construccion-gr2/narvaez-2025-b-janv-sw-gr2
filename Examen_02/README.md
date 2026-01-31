@@ -9,6 +9,7 @@ Aplicación de línea de comandos para calcular interés simple y compuesto.
 Esta calculadora permite calcular:
 
 - **Interés Simple**: I = P × r × t
+- **Interés Compuesto**: A = P(1 + r/n)^(nt)
 
 ## 🛠️ Tecnologías
 

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for interesSimple.js</title>
+    <title>Code coverage report for interesCompuesto.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> interesSimple.js</h1>
+        <h1><a href="index.html">All files</a> interesCompuesto.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
@@ -98,7 +98,9 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -109,12 +111,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,39 +138,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Calcula el interés simple
- * Fórmula: I = P × r × t
+ * Calcula el monto final con interés compuesto
+ * Fórmula: A = P(1 + r/n)^(nt)
  *
  * @param {number} principal - Capital inicial (P)
  * @param {number} tasa - Tasa de interés anual en decimal (r) - ej: 0.05 para 5%
  * @param {number} tiempo - Tiempo en años (t)
- * @returns {number} - Interés generado
- * @throws {Error} - Si algún valor es negativo
+ * @param {number} n - Número de veces que se capitaliza por año (default: 12 = mensual)
+ * @returns {number} - Monto final
+ * @throws {Error} - Si algún valor es inválido
  */
-function calcularInteresSimple(principal, tasa, tiempo) {
-  if (principal &lt; 0 || tasa &lt; 0 || tiempo &lt; 0) {
+function calcularInteresCompuesto(principal, tasa, tiempo, n = 12) {
+  if (principal &lt; 0 || tasa &lt; 0 || tiempo &lt; 0 || n &lt;= 0) {
     throw new Error('Los valores deben ser positivos');
   }
 &nbsp;
-  const interes = principal * tasa * tiempo;
-  return Math.round(interes * 100) / 100;
+  const monto = principal * Math.pow(1 + tasa / n, n * tiempo);
+  return Math.round(monto * 100) / 100;
 }
 &nbsp;
 /**
- * Calcula el monto total (capital + interés)
+ * Calcula solo el interés generado (monto - capital)
  * @param {number} principal - Capital inicial
  * @param {number} tasa - Tasa de interés anual en decimal
  * @param {number} tiempo - Tiempo en años
- * @returns {number} - Monto total
+ * @param {number} n - Capitalizaciones por año
+ * @returns {number} - Interés generado
  */
-function calcularMontoTotal(principal, tasa, tiempo) {
-  const interes = calcularInteresSimple(principal, tasa, tiempo);
-  return Math.round((principal + interes) * 100) / 100;
+function calcularGananciaCompuesta(principal, tasa, tiempo, n = <span class="branch-0 cbranch-no" title="branch not covered" >12)</span> {
+  const monto = calcularInteresCompuesto(principal, tasa, tiempo, n);
+  return Math.round((monto - principal) * 100) / 100;
 }
 &nbsp;
 module.exports = {
-  calcularInteresSimple,
-  calcularMontoTotal,
+  calcularInteresCompuesto,
+  calcularGananciaCompuesta,
 };
 &nbsp;</pre></td></tr></table></pre>
 
