@@ -128,7 +128,6 @@ Este proyecto usa **GitHub Actions** para integración continua.
 
 ![Pull Request 2](./evidencias/PR2.png)
 
-
 ## 📄 Licencia
 
 MIT
