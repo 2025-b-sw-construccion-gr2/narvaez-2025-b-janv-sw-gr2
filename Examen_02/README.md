@@ -38,21 +38,45 @@ npm install
 ### Uso
 
 ```bash
-# Interés Simple (capital, tasa, años)
-node src/index.js simple 1000 0.05 2
+# Ejecutar la calculadora interactiva
+node src/index.js
+```
 
-# Output:
-# 💰 Calculadora de Intereses
-# ===========================
-# 📊 Datos de entrada:
-#    Capital inicial: $1000.00
-#    Tasa anual:      5.00%
-#    Tiempo:          2 año(s)
-#
-# 📈 Resultado (Interés Simple):
-#    Fórmula: I = P × r × t
-#    Interés generado: $100.00
-#    Monto total:      $1100.00
+El programa mostrará un menú interactivo:
+
+```
+╔══════════════════════════════════════╗
+║   💰 CALCULADORA DE INTERESES 💰    ║
+╚══════════════════════════════════════╝
+
+Selecciona el tipo de interés:
+
+  [1] Interés Simple
+  [2] Interés Compuesto
+  [0] Salir
+
+Elige una opción: 1
+
+── Interés Simple ──
+
+💵 Capital inicial ($): 1000
+📊 Tasa de interés anual (%): 5
+📅 Tiempo (años): 2
+
+╔══════════════════════════════════════╗
+║      📈 RESULTADO - INTERÉS SIMPLE   ║
+╚══════════════════════════════════════╝
+
+📊 Datos ingresados:
+   Capital inicial: $1000.00
+   Tasa anual:      5%
+   Tiempo:          2 año(s)
+
+💡 Fórmula: I = P × r × t
+
+💰 Resultados:
+   Interés generado: $100.00
+   Monto total:      $1100.00
 ```
 
 ## 🧪 Comandos de Desarrollo
@@ -92,15 +116,18 @@ Este proyecto usa **GitHub Actions** para integración continua.
 
 ### Pipeline Exitoso
 
-<!-- Agregar captura después de ejecutar pipeline -->
+![Pipeline Exitoso](./evidencias/Pipeline.png)
 
 ### Cobertura de Tests
 
-<!-- Agregar captura después de ejecutar tests -->
+![Cobertura de Tests](./evidencias/Test.png)
 
 ## Pull Requests
 
-- [ ]
+![Pull Request 1](./evidencias/PR1.png)
+
+![Pull Request 2](./evidencias/PR2.png)
+
 
 ## 📄 Licencia
 
