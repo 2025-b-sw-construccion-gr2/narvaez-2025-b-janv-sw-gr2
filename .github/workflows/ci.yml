@@ -25,6 +25,9 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
+      - name: Fix permisos
+        run: chmod +x ./node_modules/.bin/*
+
       - name: Ejecutar ESLint
         run: ./node_modules/.bin/eslint src/ tests/
 
@@ -47,6 +50,9 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
+      - name: Fix permisos
+        run: chmod +x ./node_modules/.bin/*
+
       - name: Verificar formato con Prettier
         run: ./node_modules/.bin/prettier --check .
 
@@ -68,6 +74,9 @@ jobs:
 
       - name: Instalar dependencias
         run: npm install
+
+      - name: Fix permisos
+        run: chmod +x ./node_modules/.bin/*
 
       - name: Ejecutar tests con cobertura
         run: ./node_modules/.bin/jest --coverage
