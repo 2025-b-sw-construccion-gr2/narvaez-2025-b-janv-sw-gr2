@@ -5,10 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "lint": "eslint src/**/*.js tests/**/*.js",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
-    "test": "jest --coverage",
+    "lint": "npx eslint src/ tests/",
+    "format": "npx prettier --check .",
+    "format:fix": "npx prettier --write .",
+    "test": "npx jest --coverage",
     "build": "node -e \"const fs=require('fs'); if(!fs.existsSync('dist'))fs.mkdirSync('dist'); fs.readdirSync('src').filter(f=>f.endsWith('.js')).forEach(f=>fs.copyFileSync('src/'+f,'dist/'+f)); console.log('Build successful!')\""
   },
   "keywords": [
